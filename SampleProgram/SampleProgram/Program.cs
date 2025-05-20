@@ -9,25 +9,12 @@ namespace SampleProgram
         public static void Main()
         {
             var game = new Game();
-            // var game = new ComplexGame();
-
             game.Setup();
             game.Play(15);
 
-
-
-            //var pieces = new List<GamePiece>
-            //        {
-            //            new Knight(new Position(2, 2)),
-            //            new Bishop(new Position(3, 3)),
-            //            new Queen(new Position(4, 4))
-            //        };
-
-            //var board = new GameBoard(pieces);
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    board.MoveRandomPiece();
-            //}
+            var complexGame = new ComplexGame();
+            complexGame.Setup();
+            complexGame.Play(15);
 
             Console.WriteLine("Press any key ...");
             Console.ReadKey();
