@@ -1,0 +1,243 @@
+<UserControl x:Class="FirstDraft.ApplyDemo.Views.ApplyIconRadioButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:FirstDraft.Controls;assembly=FirstDraft"
+             xmlns:local="clr-namespace:FirstDraft.ApplyDemo.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:IconRadioButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="图标单选按钮" />
+                                <controls:IconRadioButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
+                                <controls:IconRadioButton  Icon="{Binding home_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi}" IconSize="20"/>
+                                <controls:IconRadioButton  Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.Left}" IconSize="20"/>
+                                <controls:IconRadioButton  Icon="{Binding tag_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.Bottom}" IconSize="20" />
+                                <controls:IconRadioButton  Icon="{Binding user_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect}" Padding="10"/>
+                                <controls:IconRadioButton  Icon="{Binding email_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Left}"  Padding="10"/>
+                                <controls:IconRadioButton  Icon="{Binding phone_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Top}"  Padding="10"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi}" IconSize="20" BorderThickness="1"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Style="{StaticResource IconRadioButton.Navi.AccentEffect}"  Padding="10" CornerRadius="20" BorderThickness="1"/>
+                            </StackPanel>
+
+                            <WrapPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="5 0 0 5" Icon="{Binding view_module, Source={StaticResource IconSet}}" IsChecked="True"/>
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" BorderThickness="0 1" Icon="{Binding view_compact, Source={StaticResource IconSet}}" />
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="0 5 5 0" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" />
+                            </WrapPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore.Left}" IsChecked="True"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentBack.Static}" IsChecked="True"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Text="默认样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                       <Run Text="选中项高亮提示，可以通过设置" />
+                        <Run Text="Icon" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="实现只显示图标，也可以给" />
+                        <Run Text="Content" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="附加内容同时显示文本，一般组合使用。" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="5">
+                            <StackPanel Orientation="Horizontal">
+                                <controls:IconRadioButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="使能" />
+                                <controls:IconRadioButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" IsChecked="True" Content="选中" />
+                            </StackPanel>
+
+                            <StackPanel  Orientation="Horizontal">
+                                <controls:IconRadioButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="不使能" IsEnabled="False"/>
+                                <controls:IconRadioButton Margin="5" Icon="{Binding tags_line, Source={StaticResource IconSet}}" Content="选中" IsChecked="True" IsEnabled="False"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+
+                    <TextBlock Text="预定义样式：" FontWeight="Black" Margin="0 10 0 0"/>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="IconRadioButton.Navi" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：导航拦按钮。图标在左，文本在右" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.Left" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：左边高亮导航拦按钮。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.Bottom" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：底部高亮导航拦按钮。" />
+                    </TextBlock>
+
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.AccentEffect" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：阴影光晕导航拦按钮，图标在上，文本在下。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.AccentEffect.Left" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：左边高亮阴影光晕导航拦按钮。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.AccentEffect.Top" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：顶部高亮阴影光晕导航拦按钮。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="通过设置" />
+                        <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="为" />
+                        <Run Text="IconRadioButton.Navi.AccentFore" FontWeight="Black"  FontStyle="Oblique"/>
+                        <Run Text="：选中背景变化，前景高亮导航拦按钮。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                          <Run Text="通过设置" />
+                          <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="为" />
+                          <Run Text="IconRadioButton.Navi.AccentFore.Left" FontWeight="Black"  FontStyle="Oblique"/>
+                          <Run Text="：左边高亮导航拦按钮。" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                         <Run Text="通过设置" />
+                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="为" />
+                         <Run Text="IconRadioButton.Navi.AccentBack.Static" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="：最近颜色背景，选中背景变化，前景高亮导航拦按钮。(注意背景需要匹配）" />
+                    </TextBlock>
+                    <TextBlock Padding="20 0 0 0" TextWrapping="Wrap">
+                         <Run Text="可以通过" />
+                         <Run Text="BorderThickness" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="BorderBrush" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="设置边框；" />
+                         <Run Text="CornerRadius" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="设置边框圆角；" />
+                         <Run Text="IconSize" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="FontSize" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="设置图标/文本大小；" />
+                         <Run Text="Padding" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="设置背景内边距；" />
+                    </TextBlock>
+
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="10">
+
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi}" />
+                                <controls:IconRadioButton  Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Content="关于" Style="{StaticResource IconRadioButton.Navi}" IsChecked="True" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.Left}"/>
+                                <controls:IconRadioButton  Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Content="关于" Style="{StaticResource IconRadioButton.Navi.Left}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.Bottom}" />
+                                <controls:IconRadioButton  Icon="{Binding infomation_line, Source={StaticResource IconSet}}" Content="关于" Style="{StaticResource IconRadioButton.Navi.Bottom}" IsChecked="True" />
+                            </StackPanel>
+
+
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentEffect}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentEffect}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Left}" CornerRadius="10"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Left}" IsChecked="True"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Top}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentEffect.Top}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentFore}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentFore.Left}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentFore.Left}" IsChecked="True"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Background="{DynamicResource Accent}">
+                                <controls:IconRadioButton Icon="{Binding user_line, Source={StaticResource IconSet}}" Content="用户" Style="{StaticResource IconRadioButton.Navi.AccentBack.Static}"/>
+                                <controls:IconRadioButton  Icon="{Binding settings_line, Source={StaticResource IconSet}}" Content="设置" Style="{StaticResource IconRadioButton.Navi.AccentBack.Static}" IsChecked="True"/>
+                            </StackPanel>
+
+                        </WrapPanel>
+                    </Border>
+                    <TextBlock Padding="30 0 0 0" TextWrapping="Wrap">
+                        <Run Text="小技巧：带背景的圆角状态可以设置" FontWeight="Black" />
+                        <Run Text="小技巧：带背景的圆角状态可以设置" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                        <Run Text="IconRadioButton.Selector" FontWeight="Black" />
+                    </TextBlock>
+                    <TextBlock Padding="10 0 0 0" TextWrapping="Wrap">
+                         <Run Text="通过设置" />
+                         <Run Text="Style" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="为" />
+                         <Run Text="IconRadioButton.Selector" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="：选择条单选框。可以通过设置" />
+                         <Run Text="CornerRadius" FontWeight="Black"  FontStyle="Oblique"/>
+                         <Run Text="来设置边框圆角。" />
+                    </TextBlock>
+                    <Border BorderThickness="1" BorderBrush="Gainsboro">
+                        <WrapPanel  Margin="10">
+                            <WrapPanel DockPanel.Dock="Right" Margin="5">
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="5 0 0 5" Icon="{Binding view_module, Source={StaticResource IconSet}}" IsChecked="True"/>
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" BorderThickness="0 1" Icon="{Binding view_compact, Source={StaticResource IconSet}}" />
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="0 5 5 0" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" />
+                            </WrapPanel>
+                            <StackPanel Orientation="Vertical" Margin="5">
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="5 5 0 0" Icon="{Binding view_module, Source={StaticResource IconSet}}" />
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" BorderThickness="1 0" Icon="{Binding view_compact, Source={StaticResource IconSet}}" IsChecked="True"/>
+                                <controls:IconRadioButton Style="{DynamicResource IconRadioButton.Selector}" CornerRadius="0 0 5 5" Icon="{Binding view_comfy, Source={StaticResource IconSet}}" />
+                            </StackPanel>
+                        </WrapPanel>
+                    </Border>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

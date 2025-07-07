@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\HeBianGu.Common.Expression\HeBianGu.Common.Expression.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.MessageContainer\HeBianGu.Control.MessageContainer.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Message\HeBianGu.Control.Message.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Panel\HeBianGu.Control.Panel.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.PropertyGrid\HeBianGu.Control.PropertyGrid.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.ThemeSet\HeBianGu.Control.ThemeSet.csproj" />
+    <ProjectReference Include="..\..\General\HeBianGu.General.WpfControlLib\HeBianGu.General.WpfControlLib.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.Animation\HeBianGu.Service.Animation.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.AppConfig\HeBianGu.Service.AppConfig.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.MarkupExtension\HeBianGu.Service.MarkupExtension.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.Mvp\HeBianGu.Service.Mvp.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.TypeConverter\HeBianGu.Service.TypeConverter.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Main\HeBianGu.Window.Main.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Message\HeBianGu.Window.Message.csproj" />
+    <ProjectReference Include="..\..\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj" />
+  </ItemGroup>
+
+</Project>

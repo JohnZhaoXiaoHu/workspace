@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\暂停.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\暂停 %281%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\启动.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\启动 %281%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\连续运行.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\导入方案.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\导出方案.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\icon-连续运行.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\工具箱.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bin\Images\插件.webp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DragVision.Controls\DragVision.Controls.csproj" />
+    <ProjectReference Include="..\DragVision.Plugin\DragVision.Plugin.csproj" />
+    <ProjectReference Include="..\DragVision.Shared\DragVision.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="halcondotnet">
+      <HintPath>..\..\..\..\..\..\Sofware\halcon\HALCON-21.11-Progress\bin\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

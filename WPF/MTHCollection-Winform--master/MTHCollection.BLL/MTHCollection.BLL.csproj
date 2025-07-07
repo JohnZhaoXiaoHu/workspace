@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ScottPlot.WinForms" Version="5.0.53" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MTHCollection.Common\MTHCollection.Common.csproj" />
+    <ProjectReference Include="..\MTHCollection.DAL\MTHCollection.DAL.csproj" />
+    <ProjectReference Include="..\MTHCollection.Models\MTHCollection.Models.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>firstdraft.ico</ApplicationIcon>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <Authors>Meiliyong</Authors>
+    <Description>Build our own WPF Control Style Library</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/mefdeamon/Toolkit-WeDraft</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>WeDraft FirstDraft WPF Control Style</PackageTags>
+    <NeutralLanguage>zh-Hans</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="alipay.jpg" />
+    <None Remove="ali_wechat_pay.jpg" />
+    <None Remove="ali_wechat_pay.png" />
+    <None Remove="github.current.version.fd" />
+    <None Remove="wechatpay.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="firstdraft.ico" />
+    <Content Include="github.current.version.fd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-preview.5.23280.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\FirstDraft\FirstDraft.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="alipay.jpg" />
+    <Resource Include="ali_wechat_pay.jpg" />
+    <Resource Include="ali_wechat_pay.png" />
+    <Resource Include="wechatpay.jpg" />
+  </ItemGroup>
+
+</Project>

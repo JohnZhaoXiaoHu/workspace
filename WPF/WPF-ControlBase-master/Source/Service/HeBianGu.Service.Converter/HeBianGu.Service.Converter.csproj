@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+	  <UseWPF>true</UseWPF>
+	  <PackageIcon>logo.jpg</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Base\Converter.Base.cs" />
+    <Compile Remove="Converter\Converter.Image.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Document\Resource\logo.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="Base\Converter.Base.cs" />
+    <None Include="Converter\Converter.Brush.cs" />
+    <None Include="Converter\Converter.DateTime.cs" />
+    <None Include="Converter\Converter.Enumerable.cs" />
+    <None Include="Converter\Converter.Image.cs" />
+    <None Include="Converter\Converter.Multi.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj" />
+    <ProjectReference Include="..\..\Common\HeBianGu.Common.Expression\HeBianGu.Common.Expression.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="OfficeWindowBase.xaml.cs">
+      <DependentUpon>OfficeWindowBase.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="OfficeWindowBase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

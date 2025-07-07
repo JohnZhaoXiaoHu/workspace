@@ -1,0 +1,827 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FirstDraft</name>
+    </assembly>
+    <members>
+        <member name="T:FirstDraft.AttachedProperties.SlideTo">
+            <summary>
+            【To Out】
+            </summary>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.SlideTo.AddSlideToLeft(System.Windows.Media.Animation.Storyboard,System.Single,System.Double,System.Single,System.Boolean)">
+            <summary>
+            【Out】Slide to Right
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+            <param name="offset"></param>
+            <param name="decelerationRatio"></param>
+            <param name="keepMargin"></param>
+        </member>
+        <member name="T:FirstDraft.AttachedProperties.SildeForm">
+            <summary>
+            【From In】
+            </summary>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.SildeForm.AddSlideFromLeft(System.Windows.Media.Animation.Storyboard,System.Single,System.Double,System.Single,System.Boolean)">
+            <summary>
+            【In】Slide Form Left
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+            <param name="offset"></param>
+            <param name="decelerationRatio"></param>
+            <param name="keepMargin"></param>
+        </member>
+        <member name="T:FirstDraft.AttachedProperties.FadeInOut">
+            <summary>
+            Fade In Out
+            </summary>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.FadeInOut.AddFadeIn(System.Windows.Media.Animation.Storyboard,System.Single,System.Boolean)">
+            <summary>
+            【In】Fade In
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+            <param name="from"></param>
+        </member>
+        <member name="M:FirstDraft.AttachedProperties.FadeInOut.AddFadeOut(System.Windows.Media.Animation.Storyboard,System.Single)">
+            <summary>
+            【Out】Fade Out
+            </summary>
+            <param name="storyboard"></param>
+            <param name="seconds"></param>
+        </member>
+        <member name="F:FirstDraft.AttachedProperties.PasswordBoxAttProp.PasswordProperty">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:FirstDraft.AttachedProperties.PasswordBoxAttProp.AttachProperty">
+            <summary>
+            是否使用附加属性
+            </summary>
+        </member>
+        <member name="F:FirstDraft.AttachedProperties.TextBoxAttProp.SelectAllWhenGotFocusProperty">
+            <summary>
+            当 TextBoxBase获得焦点的时候，自动全部选择文字。附加属性为SelectAllWhenGotFocus，类型为bool.
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.DateTimePickerBox">
+            <summary>
+            Interaction logic for DateTimePickerBox.xaml
+            </summary>
+            <summary>
+            DateTimePickerBox
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.DateTimePickerBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconButton.Icon">
+            <summary>
+            图标数据
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconButton.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconButton.Icon"/>
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IconRadioButton">
+            <summary>
+            边矩形图标单选按钮
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconRadioButton.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconRadioButton.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconRadioButton.Icon"/>
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconTextBox.Icon">
+            <summary>
+            图标数据
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconTextBox.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconTextBox.Icon"/>
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconTextBox.IconSize">
+            <summary>
+            图标大小
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IconToggleButton">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IconToggleButton.Icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.IconToggleButton.IconProperty">
+            <summary>
+            <see cref="P:FirstDraft.Controls.IconToggleButton.Icon"/>
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IpAddressBox">
+            <summary>
+            IpAddressBox.xaml 的交互逻辑
+            </summary>
+            <summary>
+            IpAddressBox
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.IpAddressBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Controls.IpAddressDataContext">
+            <summary>
+            IP地址模型
+            </summary>
+        </member>
+        <member name="P:FirstDraft.Controls.IpAddressDataContext.IpBytes">
+            <summary>
+            IP字节
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.IpAddressDataContext.SetAddress(System.String)">
+            <summary>
+            设置IP地址
+            </summary>
+            <param name="address">地址格式：192.168.1.2</param>
+        </member>
+        <member name="M:FirstDraft.Controls.IpAddressDataContext.SetAddress(System.Byte[])">
+            <summary>
+            设置IP地址，不改变控件的焦点
+            </summary>
+            <param name="address"></param>
+        </member>
+        <member name="T:FirstDraft.Controls.TimePickerBox">
+            <summary>
+            Interaction logic for TimePickerBox.xaml
+            </summary>
+            <summary>
+            TimePickerBox
+            </summary>
+        </member>
+        <member name="M:FirstDraft.Controls.TimePickerBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="F:FirstDraft.Controls.TimePickerDataContext.TimeChanged">
+            <summary>
+            通知子类修改
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.BooleanConverter`1">
+            <summary>
+            <see cref="T:System.Boolean"/> 值转换器
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:FirstDraft.Converters.InvertBooleanConverter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值 反向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.BooleanToVisibilityConverter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Windows.Visibility"/> 值 正向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.InvertBooleanToVisibilityConverter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Windows.Visibility"/> 值 反向向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.Converters.BooleanToInt01Converter">
+            <summary>
+            <see cref="T:System.Boolean"/> 值与 <see cref="T:System.Int32"/> 值(0,1) 反向向转换
+            </summary>
+        </member>
+        <member name="T:FirstDraft.FdWindow">
+            <summary>
+            First Draft自定义窗口
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.mWindowResizer">
+            <summary>
+            The window resizer helper that keeps the window size correct in various states
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.mDockPosition">
+            <summary>
+            The last known dock position
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.zeroWindowCornerRadius">
+            <summary>
+            The default no corner value
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.normalWindowCornerRadius">
+            <summary>
+            The first setted window corner radius
+            </summary>
+        </member>
+        <member name="F:FirstDraft.FdWindow.normalMarginSize">
+            <summary>
+            The margin size when window in normal state
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.BeingMoved">
+            <summary>
+            True if the window is currently being moved/dragged
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.Borderless">
+            <summary>
+            True if the window should be borderless because it is docked or maximized
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.ResizeBorder">
+            <summary>
+            The size of the resize border around the window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.ResizeBorderThickness">
+            <summary>
+            The size of the resize border around the window, taking into account the outer margin
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.InnerContentPadding">
+            <summary>
+            The padding of the inner content of the main window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.OuterMarginBlurRadius">
+            <summary>
+             The drop shadow BlurRadius
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.OuterMarginSize">
+            <summary>
+            The margin around the window to allow for a drop shadow
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.FlatBorderThickness">
+            <summary>
+            The rectangle border around the window when docked
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.WindowCornerRadius">
+            <summary>
+            The radius of the edges of the window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.CaptionHeight">
+            <summary>
+            The height of the title bar / caption of the window
+            </summary>
+        </member>
+        <member name="P:FirstDraft.FdWindow.CaptionHeightGridLength">
+            <summary>
+            The height of the title bar / caption of the window
+            </summary>
+        </member>
+        <member name="M:FirstDraft.FdWindow.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:FirstDraft.FdWindow.WindowResized">
+            <summary>
+            If the window resizes to a special position (docked or maximized)
+            this will update all required property change events to set the borders and radius values
+            </summary>
+        </member>
+        <member name="T:FirstDraft.WindowResizer">
+            <summary>
+            Fixes the issue with Windows of Style <see cref="F:System.Windows.WindowStyle.None"/> covering the taskbar
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mWindow">
+            <summary>
+            The window to handle the resizing for
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mScreenSize">
+            <summary>
+            The last calculated available screen size
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mEdgeTolerance">
+            <summary>
+            How close to the edge the window has to be to be detected as at the edge of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mMonitorDpi">
+            <summary>
+            The transform matrix used to convert WPF sizes to screen pixels
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mLastScreen">
+            <summary>
+            The last screen the window was on
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mLastDock">
+            <summary>
+            The last known dock position
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowResizer.mBeingMoved">
+            <summary>
+            A flag indicating if the window is currently being moved/dragged
+            </summary>
+        </member>
+        <member name="E:FirstDraft.WindowResizer.WindowDockChanged">
+            <summary>
+            Called when the window dock position changes
+            </summary>
+        </member>
+        <member name="E:FirstDraft.WindowResizer.WindowStartedMove">
+            <summary>
+            Called when the window starts being moved/dragged
+            </summary>
+        </member>
+        <member name="E:FirstDraft.WindowResizer.WindowFinishedMove">
+            <summary>
+            Called when the window has been moved/dragged and then finished
+            </summary>
+        </member>
+        <member name="P:FirstDraft.WindowResizer.CurrentMonitorSize">
+            <summary>
+            The size and position of the current monitor the window is on
+            </summary>
+        </member>
+        <member name="P:FirstDraft.WindowResizer.CurrentMonitorMargin">
+            <summary>
+            The margin around the window for the current window to compensate for any non-usable area
+            such as the task bar
+            </summary>
+        </member>
+        <member name="P:FirstDraft.WindowResizer.CurrentScreenSize">
+            <summary>
+            The size and position of the current screen in relation to the multi-screen desktop
+            For example a second monitor on the right will have a Left position of
+            the X resolution of the screens on the left
+            </summary>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.#ctor(System.Windows.Window)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="window">The window to monitor and correctly maximize</param>
+            <param name="adjustSize">The callback for the host to adjust the maximum available size if needed</param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.Window_SourceInitialized(System.Object,System.EventArgs)">
+            <summary>
+            Initialize and hook into the windows message pump
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.Window_LocationChanged(System.Object,System.EventArgs)">
+            <summary>
+            Monitor for moving of the window and constantly check for docked positions
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.Window_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Monitors for size changes and detects if the window has been docked (Aero snap) to an edge
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.WindowProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,System.Boolean@)">
+            <summary>
+            Listens out for all windows messages for this window
+            </summary>
+            <param name="hwnd"></param>
+            <param name="msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <param name="handled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.WmGetMinMaxInfo(System.IntPtr,System.IntPtr)">
+            <summary>
+            Get the min/max window size for this window
+            Correctly accounting for the task bar size and position
+            </summary>
+            <param name="hwnd"></param>
+            <param name="lParam"></param>
+        </member>
+        <member name="M:FirstDraft.WindowResizer.GetCursorPosition">
+            <summary>
+            Gets the current cursor position in screen coordinates relative to an entire multi-desktop position
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:FirstDraft.WindowDockPosition">
+            <summary>
+            The dock position of the window
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.Undocked">
+            <summary>
+            Not docked
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.Left">
+            <summary>
+            Docked to the left of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.Right">
+            <summary>
+            Docked to the right of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.TopBottom">
+            <summary>
+            Docked to the top/bottom of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.TopLeft">
+            <summary>
+            Docked to the top-left of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.TopRight">
+            <summary>
+            Docked to the top-right of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.BottomLeft">
+            <summary>
+            Docked to the bottom-left of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.WindowDockPosition.BottomRight">
+            <summary>
+            Docked to the bottom-right of the screen
+            </summary>
+        </member>
+        <member name="F:FirstDraft.POINT.X">
+            <summary>
+            x coordinate of point.
+            </summary>
+        </member>
+        <member name="F:FirstDraft.POINT.Y">
+            <summary>
+            y coordinate of point.
+            </summary>
+        </member>
+        <member name="M:FirstDraft.POINT.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Construct a point of coordinates (x,y).
+            </summary>
+        </member>
+        <member name="T:FirstDraft.IconSet">
+            <summary>
+            图标资源集合
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.overview_fill">
+            <summary>
+            总览
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.overview_line">
+            <summary>
+            总览
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.home_fill">
+            <summary>
+            首页 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.home_line">
+            <summary>
+            首页 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tag_fill">
+            <summary>
+            标签 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tag_line">
+            <summary>
+            标签 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tags_fill">
+            <summary>
+            多标签 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.tags_line">
+            <summary>
+            多标签 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.user_fill">
+            <summary>
+            用户 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.user_line">
+            <summary>
+            用户 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.settings_fill">
+            <summary>
+            设置 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.settings_line">
+            <summary>
+            设置 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.infomation_fill">
+            <summary>
+            i 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.infomation_line">
+            <summary>
+            i 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.all_line">
+            <summary>
+            总览 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.all_fill">
+            <summary>
+            总览 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.rect_fill">
+            <summary>
+            方形 实体
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.rect_line">
+            <summary>
+            方形 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.cube_fill">
+            <summary>
+            方块 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.cube_line">
+            <summary>
+            方块 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.passwrod_fill">
+            <summary>
+            密码 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.password_line">
+            <summary>
+            密码 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.file_fill">
+            <summary>
+            文件 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.file_line">
+            <summary>
+            文件 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.integral_fill">
+            <summary>
+            完整 填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.integral_line">
+            <summary>
+            完整 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.volume">
+            <summary>
+            音量
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.scanload">
+            <summary>
+            扫描加载
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.search">
+            <summary>
+            搜索 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.textbox">
+            <summary>
+            文本框
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.combobox">
+            <summary>
+            下拉列表框
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.record_on">
+            <summary>
+            开始录制图标
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.record_off">
+            <summary>
+            停止录制图标
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.launch">
+            <summary>
+            发射
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.signal">
+            <summary>
+            信号
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.serialport">
+            <summary>
+            串口-
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.erase">
+            <summary>
+            清理 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.version">
+            <summary>
+            版本 v 线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.edit">
+            <summary>
+            编辑 实体填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.welcome">
+            <summary>
+            礼花 欢迎
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.slider_fill">
+            <summary>
+            滑动条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.in_dark">
+            <summary>
+            黑夜
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.in_light">
+            <summary>
+            白天
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.email_fill">
+            <summary>
+            电子邮件——填充
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.email_line">
+            <summary>
+            电子邮件-线条
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.phone_line">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.phone_fill">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.ipaddressbox">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.running">
+            <summary>
+            运行管理
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.folder">
+            <summary>
+            文件夹
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.folder_opended">
+            <summary>
+            文件夹打开
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.start">
+            <summary>
+            FCT的图标
+            开始测试，
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.scan_gun">
+            <summary>
+            扫码枪
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.enter">
+            <summary>
+            FCT的图标
+            进入
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.exit">
+            <summary>
+            FCT的图标
+            退出
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.reconfig">
+            <summary>
+            重新配置
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.clock">
+            <summary>
+            时钟
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.shell">
+            <summary>
+            命令行/控制台
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.back">
+            <summary>
+            回退
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.to_right">
+            <summary>
+            朝右的箭头
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.database_view">
+            <summary>
+            FCT图标
+            数据库查看
+            </summary>
+        </member>
+        <member name="P:FirstDraft.IconSet.add">
+            <summary>
+            FCT图标
+            添加
+            </summary>
+        </member>
+    </members>
+</doc>

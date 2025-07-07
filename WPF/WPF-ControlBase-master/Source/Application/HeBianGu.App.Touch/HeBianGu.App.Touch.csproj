@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="logo.ico" />
+    <None Remove="Resources\iconfont.ttf" />
+    <None Remove="Resources\体温测量示意图.png" />
+    <None Remove="Resources\勾1.png" />
+    <None Remove="Resources\女.png" />
+    <None Remove="Resources\女医生.png" />
+    <None Remove="Resources\男.png" />
+    <None Remove="Resources\脂肪测量示意图19.12.30.png" />
+    <None Remove="Resources\血压测量示意图19.12.30.png" />
+    <None Remove="Resources\血氧测量示意图.png" />
+    <None Remove="Resources\身高测量.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Message\HeBianGu.Control.Message.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.PasswordBox\HeBianGu.Control.PasswordBox.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.ThemeSet\HeBianGu.Control.ThemeSet.csproj" />
+    <ProjectReference Include="..\..\General\HeBianGu.General.WpfControlLib\HeBianGu.General.WpfControlLib.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.Animation\HeBianGu.Service.Animation.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.Mvc\HeBianGu.Service.Mvc.csproj" />
+    <ProjectReference Include="..\..\System\HeBianGu.Systems.Setting\HeBianGu.Systems.Setting.csproj" />
+    <ProjectReference Include="..\..\System\HeBianGu.Systems.XmlSerialize\HeBianGu.Systems.XmlSerialize.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Link\HeBianGu.Window.Link.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.MessageDialog\HeBianGu.Window.MessageDialog.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Message\HeBianGu.Window.Message.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\iconfont.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\体温测量示意图.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\勾1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\女.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\女医生.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\男.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\脂肪测量示意图19.12.30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\血压测量示意图19.12.30.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\血氧测量示意图.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\身高测量.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\SystemKeyBoard.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Import Project="..\HeBianGu.App.Touch.Share\HeBianGu.App.Touch.Share.projitems" Label="Shared" />
+
+</Project>

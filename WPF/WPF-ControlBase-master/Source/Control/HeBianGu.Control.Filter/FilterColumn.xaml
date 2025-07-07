@@ -1,0 +1,173 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cs="clr-namespace:System.Collections;assembly=mscorlib"
+                    xmlns:h="https://github.com/HeBianGu"
+                    xmlns:local="clr-namespace:HeBianGu.Control.Filter"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Style x:Key="{ComponentResourceKey ResourceId=S.FilterColumn.Default, TypeInTargetAssembly={x:Type local:FilterColumn}}" TargetType="{x:Type local:FilterColumn}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="OutSource" Value="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl, AncestorLevel=2}, Path=ItemsSource, Mode=TwoWay}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:FilterColumn}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" />
+                        <ToggleButton x:Name="PART_DropDownToggle"
+                                      h:Cattach.AllowsAnimation="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsChecked}"
+                                      h:Cattach.Icon="&#xeb05;"
+                                      h:Cattach.IconSize="{DynamicResource {x:Static h:IconSizeKeys.Small}}"
+                                      Content="&#xeb05;"
+                                      Style="{DynamicResource {x:Static h:ToggleButtonKeys.DoubleFIconCheckedSingle}}" />
+                        <Popup x:Name="PART_Popup"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               IsOpen="{Binding ElementName=PART_DropDownToggle, Path=IsChecked}"
+                               Placement="Bottom"
+                               PlacementTarget="{Binding ElementName=PART_DropDownToggle}"
+                               PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}"
+                               StaysOpen="False"
+                               VerticalOffset="2">
+                            <Grid>
+                                <Grid x:Name="grid_auto"
+                                      Height="Auto"
+                                      MinWidth="400"
+                                      Margin="0,5,0,0"
+                                      HorizontalAlignment="Stretch"
+                                      VerticalAlignment="Top">
+                                    <Border Background="{DynamicResource {x:Static h:BrushKeys.BackgroundDefault}}"
+                                            BorderBrush="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}"
+                                            BorderThickness="1"
+                                            CornerRadius="{DynamicResource {x:Static h:CornerRadiusKeys.CornerRadius}}" />
+                                    <Polygon Margin="0,-5,8,0"
+                                             HorizontalAlignment="Right"
+                                             Fill="{DynamicResource {x:Static h:BrushKeys.Accent}}"
+                                             FillRule="Nonzero"
+                                             Points="0,5 5,0 10,5 0,5"
+                                             Stroke="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}" />
+
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                        <StackPanel Margin="10,6">
+                                            <StackPanel.Resources>
+                                                <cs:ArrayList x:Key="S.ArrayList.Select">
+                                                    <system:String>SelectSource</system:String>
+                                                </cs:ArrayList>
+
+                                                <DataTemplate DataType="{x:Type local:StringFilter}">
+                                                    <StackPanel>
+                                                        <ComboBox x:Name="cb_sf"
+                                                                  h:Cattach.Title="条件"
+                                                                  ItemsSource="{Binding Source={h:EnumGroupSource EnumType={x:Type local:FilterOperate}, GroupName=String}}"
+                                                                  SelectedIndex="0"
+                                                                  SelectedItem="{Binding Operate}"
+                                                                  Style="{DynamicResource {x:Static h:ComboBoxKeys.LabelSingle}}" />
+                                                        <DockPanel Margin="0,2" Visibility="{Binding ElementName=cb_sf, Path=SelectedItem, Converter={x:Static h:XConverter.VisibilityContainWithStringConverter}, ConverterParameter={StaticResource S.ArrayList.Select}}">
+                                                            <TextBlock VerticalAlignment="Center" Text="值 " />
+                                                            <ListBox MaxHeight="300"
+                                                                     h:Cattach.SelectedItems="{Binding SelectedSource, Mode=TwoWay}"
+                                                                     ItemsSource="{Binding Source}"
+                                                                     SelectionMode="Multiple"
+                                                                     Style="{DynamicResource {x:Static h:ListBoxKeys.WrapPanel}}" />
+                                                        </DockPanel>
+                                                        <TextBox h:Cattach.Title="值"
+                                                                 Style="{DynamicResource {x:Static h:TextBoxKeys.Label}}"
+                                                                 Text="{Binding Value}"
+                                                                 Visibility="{Binding ElementName=cb_sf, Path=SelectedItem, Converter={x:Static h:XConverter.VisibilityContainWithOutStringConverter}, ConverterParameter={StaticResource S.ArrayList.Select}}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+
+                                                <DataTemplate DataType="{x:Type local:IntFilter}">
+                                                    <StackPanel>
+                                                        <ComboBox h:Cattach.Title="条件"
+                                                                  ItemsSource="{Binding Source={h:EnumGroupSource EnumType={x:Type local:FilterOperate}, GroupName=Int}}"
+                                                                  SelectedIndex="0"
+                                                                  SelectedItem="{Binding Operate}"
+                                                                  Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}" />
+
+
+                                                        <TextBox Margin="0,2"
+                                                                 h:Cattach.Title="值"
+                                                                 Style="{DynamicResource {x:Static h:TextBoxKeys.Label}}"
+                                                                 Text="{Binding Value}" />
+
+                                                    </StackPanel>
+                                                </DataTemplate>
+
+                                                <DataTemplate DataType="{x:Type local:DoubleFilter}">
+                                                    <StackPanel>
+                                                        <ComboBox h:Cattach.Title="条件"
+                                                                  ItemsSource="{Binding Source={h:EnumGroupSource EnumType={x:Type local:FilterOperate}, GroupName=Double}}"
+                                                                  SelectedIndex="0"
+                                                                  SelectedItem="{Binding Operate}"
+                                                                  Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}" />
+                                                        <TextBox Grid.ColumnSpan="12"
+                                                                 Margin="0,2"
+                                                                 h:Cattach.Title="值"
+                                                                 Style="{DynamicResource {x:Static h:TextBoxKeys.Label}}"
+                                                                 Text="{Binding Value}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+
+                                                <DataTemplate DataType="{x:Type local:DateTimeFilter}">
+                                                    <StackPanel>
+                                                        <ComboBox h:Cattach.Title="条件"
+                                                                  ItemsSource="{Binding Source={h:EnumGroupSource EnumType={x:Type local:FilterOperate}, GroupName=DateTime}}"
+                                                                  SelectedIndex="0"
+                                                                  SelectedItem="{Binding Operate}"
+                                                                  Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}" />
+
+                                                        <DatePicker Margin="0,2"
+                                                                    h:Cattach.Title="            值"
+                                                                    SelectedDate="{Binding Value}"
+                                                                    Style="{DynamicResource {x:Static h:DatePickerKeys.Label}}" />
+                                                        <CheckBox Margin="85,0" Content="仅比较日期" IsChecked="{Binding OnlyDate}" />
+                                                    </StackPanel>
+                                                </DataTemplate>
+
+                                                <DataTemplate DataType="{x:Type local:BooleanFilter}">
+                                                    <ComboBox h:Cattach.Title="值"
+                                                              SelectedIndex="0"
+                                                              SelectedItem="{Binding Value}"
+                                                              Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}">
+                                                        <system:Boolean>True</system:Boolean>
+                                                        <system:Boolean>False</system:Boolean>
+                                                    </ComboBox>
+                                                </DataTemplate>
+
+
+                                            </StackPanel.Resources>
+
+                                            <TextBlock Margin="10,6" Text="选择条件" />
+                                            <Separator Height="2" Margin="2" Background="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}" />
+                                            <ContentControl Content="{TemplateBinding Filter}" />
+                                            <Separator Height="2" Margin="2" Background="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}" />
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Width="Auto"
+                                                        Padding="10,0"
+                                                        HorizontalAlignment="Right"
+                                                        Command="{x:Static h:Commander.Sure}"
+                                                        Content="应用" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </Grid>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!--<Setter Property="h:Cattach.Behaviors">
+            <Setter.Value>
+                <h:Behaviors>
+                    <h:LoadedAdornerBehavior AdornerType="{x:Type h:WaterMarkAdorner}" />
+                </h:Behaviors>
+            </Setter.Value>
+        </Setter>-->
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static local:FilterColumn.DefaultKey}}" TargetType="{x:Type local:FilterColumn}" />
+</ResourceDictionary>

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>../build</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GYPlugin\GYPlugin.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="halcondotnetxl">
+      <HintPath>E:\Application\MVTec22\HALCON-22.11-Progress\bin\dotnet35\halcondotnetxl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

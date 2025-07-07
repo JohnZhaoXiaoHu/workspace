@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:h="https://github.com/HeBianGu"
+                    xmlns:local="clr-namespace:HeBianGu.Control.ScrollVewerLocator">
+
+    <Style x:Key="{ComponentResourceKey ResourceId=S.ScrollLocatorBase.Default, TypeInTargetAssembly={x:Type local:ScrollLocatorBase}}" TargetType="{x:Type local:ScrollLocatorBase}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static h:BrushKeys.DialogCover}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static h:BrushKeys.BorderBrushDefault}}" />
+        <Setter Property="CoverBackground" Value="{DynamicResource {x:Static h:BrushKeys.DialogCover}}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ScrollLocatorBase}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.Background>
+                                <VisualBrush Stretch="Uniform" Visual="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Visual}" />
+                            </Grid.Background>
+
+                            <Canvas x:Name="PART_Visual"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Background="{TemplateBinding CoverBackground}">
+                                <local:MaskGrid x:Name="PART_MASK" BorderBrush="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}" BorderThickness="1">
+                                    <Border.Background>
+                                        <VisualBrush Visual="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Visual}" />
+                                    </Border.Background>
+                                    <h:Interaction.Behaviors>
+                                        <local:MaskMouseDragElementBehavior ConstrainToParentBounds="True" />
+                                    </h:Interaction.Behaviors>
+                                </local:MaskGrid>
+                            </Canvas>
+
+                            <UniformGrid Margin="10"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Bottom"
+                                         Rows="1">
+                                <Button Width="Auto"
+                                        Height="Auto"
+                                        h:Cattach.Icon="&#xe71b;"
+                                        h:Cattach.IconSize="12"
+                                        Command="{x:Static local:ScrollViewerLocatorCommands.FullScreen}"
+                                        Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                        Style="{DynamicResource {x:Static h:ButtonKeys.Icon}}" />
+                                <Button Width="Auto"
+                                        Height="Auto"
+                                        h:Cattach.Icon="1:1"
+                                        h:Cattach.IconSize="12"
+                                        Command="{x:Static local:ScrollViewerLocatorCommands.TrimSize}"
+                                        Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                        Style="{DynamicResource {x:Static h:ButtonKeys.Icon}}" />
+                                <Button Width="Auto"
+                                        Height="Auto"
+                                        h:Cattach.Icon="&#xe8a3;"
+                                        h:Cattach.IconSize="12"
+                                        Command="{x:Static local:ScrollViewerLocatorCommands.Plus}"
+                                        Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                        Style="{DynamicResource {x:Static h:ButtonKeys.Icon}}" />
+                                <Button Width="Auto"
+                                        Height="Auto"
+                                        h:Cattach.Icon="&#xe8a2;"
+                                        h:Cattach.IconSize="12"
+                                        Command="{x:Static local:ScrollViewerLocatorCommands.Minus}"
+                                        Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                        Style="{DynamicResource {x:Static h:ButtonKeys.Icon}}" />
+                                <Button Width="Auto"
+                                        Height="Auto"
+                                        h:Cattach.Icon="&#xe826;"
+                                        h:Cattach.IconSize="12"
+                                        Command="{x:Static local:ScrollViewerLocatorCommands.LocatorCenter}"
+                                        Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                        Style="{DynamicResource {x:Static h:ButtonKeys.Icon}}" />
+                                <!--<Button IsEnabled="False" Style="{DynamicResource {x:Static h:ButtonKeys.Transparent}}" h:Cattach.IconSize="12" Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}" h:Cattach.Icon="&#xe8a7;"/>
+                                <Button IsEnabled="False" Style="{DynamicResource {x:Static h:ButtonKeys.Transparent}}" h:Cattach.IconSize="12" Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}" h:Cattach.Icon="&#xe8a7;"/>-->
+                            </UniformGrid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!--<Setter Property="h:Cattach.Behaviors">
+            <Setter.Value>
+                <h:Behaviors>
+                    <h:LoadedAdornerBehavior AdornerType="{x:Type h:WaterMarkAdorner}" />
+                </h:Behaviors>
+            </Setter.Value>
+        </Setter>-->
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static local:ScrollLocatorBase.DefaultKey}}" TargetType="{x:Type local:ScrollLocatorBase}" />
+</ResourceDictionary>

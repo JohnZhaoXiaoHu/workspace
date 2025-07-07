@@ -1,0 +1,233 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:h="https://github.com/HeBianGu"
+                    xmlns:local="clr-namespace:HeBianGu.Control.ThemeSet"
+                    xmlns:sys="clr-namespace:System">
+    <Style x:Key="{ComponentResourceKey ResourceId=S.ThemeSet.Default, TypeInTargetAssembly={x:Type local:ThemeSet}}" TargetType="{x:Type local:ThemeSet}">
+        <Setter Property="DataContext" Value="{x:Static local:ThemeViewModel.Current}" />
+        <Setter Property="Width" Value="370" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ThemeSet}">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" TextBlock.Foreground="{TemplateBinding Foreground}" VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="Panel" MinWidth="140">
+                            <TextBlock Margin="0,0,0,8" Text="主色调" />
+                            <ListBox Margin="0,0,0,16" ItemsSource="{Binding SelectColorSource.Colors}" SelectedItem="{Binding AccentColor}">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel MaxWidth="{Binding ActualWidth, ElementName=Panel}" />
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemContainerStyle>
+                                    <Style BasedOn="{StaticResource {x:Type ListBoxItem}}" TargetType="ListBoxItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <Grid>
+                                                        <ContentPresenter />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Width="40" Height="40" Margin="2">
+                                                <Rectangle.Fill>
+                                                    <SolidColorBrush x:Name="Brush" Color="{Binding}" />
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+
+                                            <TextBlock x:Name="flag"
+                                                       Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                                       Style="{DynamicResource {x:Static h:TextBlockKeys.Icon}}"
+                                                       Text="&#xe858;"
+                                                       Visibility="Collapsed" />
+                                        </Grid>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsSelected}" Value="true">
+                                                <Setter TargetName="flag" Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsMouseOver}" Value="true">
+                                                <Setter TargetName="flag" Property="Visibility" Value="Visible" />
+                                                <Setter TargetName="flag" Property="Opacity" Value="0.8" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <StackPanel>
+                                <StackPanel.Resources>
+                                    <DataTemplate x:Key="D.ColorLink.Default" DataType="{x:Type local:ColorLink}">
+                                        <Border>
+                                            <TextBlock x:Name="text"
+                                                       HorizontalAlignment="Left"
+                                                       Foreground="{DynamicResource {x:Static h:BrushKeys.ForegroundDefault}}"
+                                                       Text="{Binding DisplayName}"
+                                                       ToolTip="{Binding Source.LocalPath}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </StackPanel.Resources>
+
+                                <ComboBox Margin="0,2"
+                                          h:Cattach.BackgroundColumn="1"
+                                          h:Cattach.Title="应用色调"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          h:Cattach.TitleWidth="Auto"
+                                          ItemsSource="{Binding ColorSource}"
+                                          SelectedItem="{Binding SelectColorSource}"
+                                          Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseSceneType, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}">
+                                    <ComboBox.Resources>
+                                        <DataTemplate DataType="{x:Type local:AccentColorSource}">
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding DispalyName}" />
+                                        </DataTemplate>
+                                    </ComboBox.Resources>
+                                    <h:Interaction.Triggers>
+                                        <h:EventTrigger EventName="SelectionChanged">
+                                            <h:InvokeCommandAction Command="{Binding RelayCommand}" CommandParameter="Combobox.SelectChanged.Refresh" />
+                                        </h:EventTrigger>
+                                    </h:Interaction.Triggers>
+                                </ComboBox>
+                                <ComboBox Margin="0,2"
+                                          h:Cattach.BackgroundColumn="1"
+                                          h:Cattach.Title="应用主题"   h:Cattach.TitleWidth="Auto"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          ItemTemplate="{StaticResource D.ColorLink.Default}"
+                                          ItemsSource="{Binding ColorLinks}"
+                                          SelectedValue="{Binding ThemeType}"
+                                          SelectedValuePath="ThemeType"
+                                          Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseThemeType, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" />
+                                <ComboBox Margin="0,2"
+                                          h:Cattach.BackgroundColumn="1"
+                                          h:Cattach.Title="控件风格"  h:Cattach.TitleWidth="Auto"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          ItemsSource="{h:EnumSource EnumType={x:Type h:StyleType}}"
+                                          SelectedItem="{Binding Source={x:Static h:StyleSetting.Instance}, Path=StyleType}"
+                                          Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseThemeStyle, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" />
+                                <ComboBox Margin="0,2"
+                                          HorizontalContentAlignment="Center"
+                                          h:Cattach.BackgroundColumn="1"
+                                          h:Cattach.Title="字体大小"  h:Cattach.TitleWidth="Auto"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          ItemsSource="{Binding Source={h:EnumSource EnumType={x:Type local:FontSize}}}"
+                                          SelectedItem="{Binding FontSize}"
+                                          Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseFontSize, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" />
+                                <ComboBox Margin="0,2"
+                                          VerticalAlignment="Center"
+                                          HorizontalContentAlignment="Center"
+                                          h:Cattach.BackgroundColumn="1"
+                                          h:Cattach.Title="色调类型"  h:Cattach.TitleWidth="Auto"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          ItemsSource="{Binding Source={h:EnumSource EnumType={x:Type local:AccentBrushType}}}"
+                                          SelectedItem="{Binding AccentBrushType}"
+                                          Style="{DynamicResource {x:Static h:ComboBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseBrushType, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" />
+
+                                <CheckBox Margin="0,2"
+                                          h:Cattach.IconSize="22"
+                                          h:Cattach.Title="跟随系统"  h:Cattach.TitleWidth="Auto"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          h:Cattach.UseMouseOverScale="False"
+                                          IsChecked="{Binding IsFollowSystemSystem}"
+                                          Style="{DynamicResource {x:Static h:CheckBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseFollowSystem, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" />
+
+                                <CheckBox x:Name="cb_isUseAnimal"
+                                          h:Cattach.IconSize="22"  h:Cattach.TitleWidth="Auto"
+                                          h:Cattach.Title="动态主题"
+                                          h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                          h:Cattach.UseMouseOverScale="False"
+                                          IsChecked="{Binding IsUseAnimal}"
+                                          Style="{DynamicResource {x:Static h:CheckBoxKeys.Label}}"
+                                          Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseDynamic, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}" />
+
+                                <DockPanel Height="{DynamicResource {x:Static h:SystemKeys.ItemHeight}}" Visibility="{Binding ElementName=cb_isUseAnimal, Path=IsChecked, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}">
+                                    <TextBlock Margin="2,0"
+                                               VerticalAlignment="Center"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding AnimalSpeed, Mode=TwoWay}" />
+                                    <Slider h:Cattach.Title="动态间隔"
+                                            h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                            Background="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                            IsSnapToTickEnabled="True"
+                                            Maximum="60000"  h:Cattach.TitleWidth="Auto"
+                                            Minimum="1"
+                                            Style="{DynamicResource {x:Static h:SliderKeys.Label}}"
+                                            Value="{Binding AnimalSpeed, Mode=TwoWay}" />
+                                </DockPanel>
+
+                                <DockPanel Height="{DynamicResource {x:Static h:SystemKeys.ItemHeight}}">
+                                    <TextBlock Margin="2,0"
+                                               VerticalAlignment="Center"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding RowHeight, Mode=TwoWay}" />
+                                    <Slider h:Cattach.Title="行高度"
+                                            h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                            Background="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                            IsSnapToTickEnabled="True"
+                                            Maximum="80"  h:Cattach.TitleWidth="Auto"
+                                            Minimum="20"
+                                            Style="{DynamicResource {x:Static h:SliderKeys.Label}}"
+                                            Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseRowHeight, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}"
+                                            Value="{Binding RowHeight}" />
+                                </DockPanel>
+                                <DockPanel Height="{DynamicResource {x:Static h:SystemKeys.ItemHeight}}">
+                                    <TextBlock Margin="2,0"
+                                               VerticalAlignment="Center"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding ItemHeight, Mode=TwoWay}" />
+                                    <Slider h:Cattach.Title="项高度"
+                                            h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                            Background="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                            IsSnapToTickEnabled="True"
+                                            Maximum="80"
+                                            Minimum="20"  h:Cattach.TitleWidth="Auto"
+                                            Style="{DynamicResource {x:Static h:SliderKeys.Label}}"
+                                            Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseItemHeight, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}"
+                                            Value="{Binding ItemHeight}" />
+                                </DockPanel>
+                                <DockPanel Height="{DynamicResource {x:Static h:SystemKeys.ItemHeight}}">
+                                    <TextBlock Margin="2,0"
+                                               VerticalAlignment="Center"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding ItemCornerRadius, Mode=TwoWay}" />
+                                    <Slider h:Cattach.Title="项圆角"
+                                            h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                            Background="{DynamicResource {x:Static h:BrushKeys.ForegroundWhite}}"
+                                            IsSnapToTickEnabled="True"
+                                            Maximum="80"
+                                            Minimum="0"  h:Cattach.TitleWidth="Auto"
+                                            Style="{DynamicResource {x:Static h:SliderKeys.Label}}"
+                                            Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseCorner, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}"
+                                            Value="{Binding ItemCornerRadius}" />
+                                </DockPanel>
+
+                                <ContentControl h:Cattach.Title="自定义色"
+                                                h:Cattach.TitleForeground="{Binding RelativeSource={RelativeSource AncestorType=local:ThemeSet}, Path=Foreground}"
+                                                Style="{DynamicResource {x:Static h:ContentControlKeys.Label}}"
+                                                Visibility="{Binding Source={x:Static local:ThemeViewPresenter.Instance}, Path=UseCustomBrush, Converter={x:Static h:XConverter.BooleanToVisibilityConverter}}">
+                                    <h:MetroColorPicker Grid.Row="4"
+                                                        Grid.Column="1"
+                                                        Grid.ColumnSpan="3"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Background="{Binding AccentColor, Converter={x:Static h:XConverter.ColorToBrushConverter}, Mode=TwoWay}" />
+                                </ContentControl>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource {x:Static local:ThemeSet.DefaultKey}}" TargetType="{x:Type local:ThemeSet}" />
+</ResourceDictionary>

@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\User.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\TitleBG.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Title.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\RightUnSelected.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\RightSelected.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Right.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Main.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Login.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\LeftUnSelected.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\LeftSelected.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Left.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\info.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Exit.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\error.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Current.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\BackGround.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Image\Alarm.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SunnyUI" Version="3.8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MTHCollection.Common\MTHCollection.Common.csproj" />
+    <ProjectReference Include="..\MTHCollection.Models\MTHCollection.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

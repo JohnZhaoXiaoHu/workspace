@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "GYPlugin.GrabImage/1.0.0": {
+        "dependencies": {
+          "GYBase": "1.0.0"
+        },
+        "runtime": {
+          "GYPlugin.GrabImage.dll": {}
+        }
+      },
+      "GYBase/1.0.0": {
+        "runtime": {
+          "GYBase.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GYPlugin.GrabImage/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GYBase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

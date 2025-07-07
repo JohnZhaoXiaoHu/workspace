@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HeBianGu.Common.TestData" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\HeBianGu.Base.WpfBase\HeBianGu.Base.WpfBase.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Drawer\HeBianGu.Control.Drawer.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Explorer\HeBianGu.Control.Explorer.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Filter\HeBianGu.Control.Filter.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Guide\HeBianGu.Control.Guide.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Host\HeBianGu.Control.Host.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.LeftMenu\HeBianGu.Control.LeftMenu.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Message\HeBianGu.Control.Message.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.PagedDataGrid\HeBianGu.Control.PagedDataGrid.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Panel\HeBianGu.Control.Panel.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Ping\HeBianGu.Control.Ping.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.PropertyGrid\HeBianGu.Control.PropertyGrid.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.ScrollInto\HeBianGu.Control.ScrollInto.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Shuttle\HeBianGu.Control.Shuttle.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.Step\HeBianGu.Control.Step.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.ThemeSet\HeBianGu.Control.ThemeSet.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.ToggleExpander\HeBianGu.Control.ToggleExpander.csproj" />
+    <ProjectReference Include="..\..\Control\HeBianGu.Control.TopContainer\HeBianGu.Control.TopContainer.csproj" />
+    <ProjectReference Include="..\..\General\HeBianGu.General.WpfControlLib\HeBianGu.General.WpfControlLib.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.Animation\HeBianGu.Service.Animation.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.AppConfig\HeBianGu.Service.AppConfig.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.MarkupExtension\HeBianGu.Service.MarkupExtension.csproj" />
+    <ProjectReference Include="..\..\Service\HeBianGu.Service.Mvc\HeBianGu.Service.Mvc.csproj" />
+    <ProjectReference Include="..\..\System\HeBianGu.Systems.Setting\HeBianGu.Systems.Setting.csproj" />
+    <ProjectReference Include="..\..\System\HeBianGu.Systems.XmlSerialize\HeBianGu.Systems.XmlSerialize.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Float\HeBianGu.Window.Float.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Link\HeBianGu.Window.Link.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.MessageDialog\HeBianGu.Window.MessageDialog.csproj" />
+    <ProjectReference Include="..\..\Window\HeBianGu.Window.Message\HeBianGu.Window.Message.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\unit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Import Project="..\HeBianGu.App.Manager.Share\HeBianGu.App.Manager.Share.projitems" Label="Shared" />
+
+</Project>
